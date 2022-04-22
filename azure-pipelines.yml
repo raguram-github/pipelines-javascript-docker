@@ -23,7 +23,7 @@ stages:
     - task: Docker@2
       inputs:
         containerRegistry: 'Raguraman Sirius docker'
-        repository: 'iha_poc'
+        repository: 'raguramansirius/iha_poc'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
         tags: '$(tag)'
