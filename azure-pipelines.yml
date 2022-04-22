@@ -32,7 +32,7 @@ stages:
 
 - stage: 'Deploy'
   displayName: 'Deploy the container to openshift'
-  dependsOn: Build
+  dependsOn: Build_and_Push
   jobs:
   - deployment: Deploy
     displayName: Deploy
