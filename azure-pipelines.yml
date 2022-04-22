@@ -57,4 +57,4 @@ stages:
                 $(Pipeline.Workspace)/manifests/deployment.yml
                 $(Pipeline.Workspace)/manifests/service.yml
               containers:
-                https://hub.docker.com/repository/docker/raguramansirius/iha_poc:6
+                https://hub.docker.com/repository/docker/raguramansirius/iha_poc:latest
