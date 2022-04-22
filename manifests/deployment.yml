@@ -16,4 +16,4 @@ spec:
         - name: web
           image: https://hub.docker.com/repository/docker/raguramansirius/iha_poc
           ports:
-          - containerPort: 8080
+          - containerPort: 3000
