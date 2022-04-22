@@ -12,7 +12,7 @@ variables:
   tag: '$(Build.BuildId)'
 
 stages:
-- stage: Build and Push
+- stage: Build_and_Push
   displayName: Build and push image to dockerhub
   jobs:
   - job: Build
