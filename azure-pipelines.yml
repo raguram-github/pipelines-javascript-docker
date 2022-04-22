@@ -32,13 +32,13 @@ stages:
 
 - stage: 'Deploy'
   displayName: 'Deploy the container to openshift'
-  dependsOn: Build
+  dependsOn: Build_and_Push
   jobs:
   - deployment: Deploy
     displayName: Deploy
     pool:
       vmImage: 'ubuntu-20.04'
-    environment: 'raguraman-sirius-stage:default'
+    environment: 'raguraman-sirius-stage'
     variables:
     - group: Release
     strategy:
