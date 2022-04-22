@@ -27,8 +27,6 @@ stages:
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
         tags: '$(tag)'
-    - publish: '$(Build.SourcesDirectory)/manifests'
-      artifact: manifests
 
 - stage: 'Deploy'
   displayName: 'Deploy the container to openshift'
@@ -45,16 +43,11 @@ stages:
       runOnce:
         deploy:
           steps:
-          - download: current
-            artifact: manifests
           - task: KubernetesManifest@0
             displayName: Deploy to Kubernetes cluster
             inputs:
               action: deploy
               kubernetesServiceConnection: 'openshift-sandbox-raguraman-sirius-stage-1650458998345'
               namespace: 'raguraman-sirius-stage'
-              manifests: |
-                $(Pipeline.Workspace)/manifests/deployment.yml
-                $(Pipeline.Workspace)/manifests/service.yml
               containers:
                 https://hub.docker.com/repository/docker/raguramansirius/iha_poc:6
