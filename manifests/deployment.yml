@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: web
-          image: docker.io/raguramansirius/iha_poc
+          image: docker.io/fiveout/iha_poc:33
           ports:
           - containerPort: 3000
