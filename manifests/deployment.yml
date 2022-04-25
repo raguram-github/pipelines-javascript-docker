@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: web
-          image: https://hub.docker.com/repository/docker/raguramansirius/iha_poc
+          image: docker.io/raguramansirius/iha_poc
           ports:
           - containerPort: 3000
