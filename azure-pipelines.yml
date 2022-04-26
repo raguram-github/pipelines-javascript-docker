@@ -20,6 +20,7 @@ stages:
     pool:
       vmImage: ubuntu-latest
     steps:
+
     - task: Docker@2
       inputs:
         containerRegistry: 'Raguraman Sirius docker'
@@ -55,4 +56,4 @@ stages:
               namespace: 'raguraman-sirius-stage'
               manifests: |
                 $(Pipeline.Workspace)/manifests/deployment.yml
-                $(Pipeline.Workspace)/manifests/service.yml
+                $(Pipeline.Workspace)/manifests/services.yml
